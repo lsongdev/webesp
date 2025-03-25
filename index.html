@@ -33,6 +33,9 @@
     #device, #status {
       color: green;
     }
+    button{
+      font-family: monospace;
+    }
   </style>
 </head>
 
@@ -88,18 +91,34 @@
           <p id="device">&lt;Unknown&gt;</p>
 
           <div>
-            <input type="text" id="address" value="0x00">
-            <input type="file" id="upload">
+            <div id="file-list">
+              <div class="file-entry">
+                <input type="text" class="address-input" value="0x00" placeholder="Flash address">
+                <input type="file" class="file-input">
+                <button id="add-file">+</button>
+                <!-- <button class="remove-file" disabled>-</button> -->
+              </div>
+            </div>
+            
           </div>
 
           <p>
             <progress-bar value="0"></progress-bar>
           </p>
-
+          
           <p>
             <button id="flash">Flash</button>
             <button id="erase">Erase</button>
           </p>
+
+          <details>
+            <summary>Advanced Options</summary>
+            <p>
+              <label><input type="checkbox" id="erase-all"> Erase All</label>
+              <label><input type="checkbox" id="compress" checked> Compress</label>
+            </p>
+          </details>
+
         </div>
 
         <div>
